@@ -1,0 +1,67 @@
+_target_: pgdvs.datasets.combined.CombinedDataset
+
+dataset_list:
+  train: null
+  eval: ["nvidia_eval"]
+  vis: ["nvidia_vis"]
+
+data_root: null
+
+max_hw: ${dataset_max_hw}
+rgb_range: ${rgb_range}
+use_aug: false
+
+dataset_specifics:
+  
+  nvidia_eval:
+    scene_ids: null
+    raw_data_dir: "nvidia_long"
+    depth_data_dir: "nvidia_long/Depths"
+    mask_data_dir: "nvidia_long_flow_mask"
+    flow_data_dir: "nvidia_long_flow_mask"
+    n_src_views_spatial: ${n_src_views_spatial}
+    n_src_views_temporal_track_one_side: ${n_src_views_temporal_track_one_side}
+    use_zoe_depth: "none"  # ["none", "moe", "nk_share_med", "nk_share_trim", "nk_indiv_med", "nk_indiv_trim"]
+    zoe_depth_data_path: "nvidia_long_zoedepth.zip"
+    flow_consist_thres: ${dataset_flow_consist_thres}
+  
+  nvidia_eval_pure_geo:
+    scene_ids: null
+    raw_data_dir: "nvidia_long"
+    depth_data_dir: "nvidia_long/Depths"
+    mask_data_dir: "nvidia_long_flow_mask"
+    flow_data_dir: "nvidia_long_flow_mask"
+    flow_consist_thres: ${dataset_flow_consist_thres}
+  
+  nvidia_vis:
+    scene_ids: null
+    raw_data_dir: "nvidia_long"
+    depth_data_dir: "nvidia_long/Depths"
+    mask_data_dir: "nvidia_long_flow_mask"
+    flow_data_dir: "nvidia_long_flow_mask"
+    n_src_views_spatial: ${n_src_views_spatial}
+    n_render_frames: ${vis_specifics.n_render_frames}
+    vis_center_time: ${vis_specifics.vis_center_time}
+    vis_time_interval: ${vis_specifics.vis_time_interval}
+    vis_bt_max_disp: ${vis_specifics.vis_bt_max_disp}
+    flow_consist_thres: ${dataset_flow_consist_thres}
+  
+  dycheck_iphone_eval:
+    scene_ids: null
+    raw_data_dir: "iphone"
+    mask_data_dir: "dycheck_iphone_flow_mask"
+    flow_data_dir: "dycheck_iphone_flow_mask"
+    n_src_views_spatial: ${n_src_views_spatial}
+    spatial_src_view_type: "clustered"  # [closest_wo_temporal, closest_with_temporal, clustered]
+    n_src_views_spatial_cluster: null
+    n_src_views_temporal_track_one_side: ${n_src_views_temporal_track_one_side}
+    flow_consist_thres: ${dataset_flow_consist_thres}
+  
+  mono_vis:
+    scene_ids: null
+    n_src_views_spatial: ${n_src_views_spatial}
+    n_render_frames: ${vis_specifics.n_render_frames}
+    vis_center_time: ${vis_specifics.vis_center_time}
+    vis_time_interval: ${vis_specifics.vis_time_interval}
+    vis_bt_max_disp: ${vis_specifics.vis_bt_max_disp}
+    flow_consist_thres: ${dataset_flow_consist_thres}

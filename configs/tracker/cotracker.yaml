@@ -1,0 +1,5 @@
+_target_: pgdvs.models.cotracker.interface.CoTrackerInterface
+
+ckpt_path: 'cotracker_stride_4_wind_8.pth'
+
+query_chunk_size: 4096

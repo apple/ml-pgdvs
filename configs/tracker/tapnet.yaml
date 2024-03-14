@@ -1,0 +1,7 @@
+_target_: pgdvs.models.tapnet.interface.TAPNetInterface
+
+ckpt_path: 'tapir_checkpoint_panning.npy'
+
+query_chunk_size: 4096
+
+flag_keep_raw_res: false

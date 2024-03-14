@@ -1,0 +1,18 @@
+_target_: pgdvs.models.gnt.renderer.BaseRenderer
+
+model_cfg:
+  _target_: pgdvs.models.gnt.model.GNTModel
+
+  # https://github.com/VITA-Group/GNT/blob/7b63996cb807dbb5c95ab6898e8093996588e73a/configs/gnt_full.txt
+
+  netwidth: 64
+  transformer_depth: 8
+  coarse_feat_dim: 32
+  fine_feat_dim: 32
+  single_net: True
+
+  posenc_max_freq_log2: 9
+  pos_enc_n_freqs: 10
+  view_enc_n_freqs: 10
+
+  ckpt_path: null

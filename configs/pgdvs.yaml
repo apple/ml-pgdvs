@@ -1,0 +1,35 @@
+defaults:
+  - _basic  # inherit configs from _basic.yaml
+  - engine: trainer
+  - model: pgdvs_renderer
+  - static_renderer: gnt
+  - tracker: dummy
+  - dataset: combined
+  # put __self__ in the end will have any configurations specified in this file
+  # OVERWRITE same configurations appeared in the defaults list above.
+  - _self_ 
+
+hydra:
+  # output_subdir: null   # null disables creation of .hydra for saving configuration
+  job:
+    chdir: true
+    name: "pgdvs"
+    config:
+      override_dirname:
+        kv_sep: "="    # original is =
+        item_sep: "-"  # original is ,
+        exclude_keys:
+          - config_name
+
+  run:
+    # set the saving / loading directory
+    dir: "experiments/\
+      ${hydra.job.name}/\
+      ${now:%Y%m%d}_${now:%H%M%S%f}/\
+      "
+      # ${hydra.job.override_dirname}/\
+
+  job_logging:
+    handlers:
+      file:
+        filename: pgdvs.log

@@ -1,0 +1,48 @@
+_target_: pgdvs.engines.visualizer_pgdvs.PGDVSVisualizer
+
+engine_cfg:
+
+  for_overfit: false
+
+  lr_init: 0.0
+
+  quant_type: "nvidia"
+
+  render_cfg:
+    render_stride: 1
+    
+    chunk_size: 1024
+    sample_inv_uniform: true
+    n_coarse_samples_per_ray: 256
+    n_fine_samples_per_ray: 0
+
+    pure_gnt: false
+    pure_gnt_with_dyn_mask: false
+
+    gnt_use_dyn_mask: false
+    gnt_use_masked_spatial_src: true
+
+    mask_oob_n_proj_thres: 1
+    mask_invalid_n_proj_thres: 4
+
+    st_pcl_remove_outlier: false
+    st_pcl_outlier_knn: 50
+    st_pcl_outlier_std_thres: 0.1
+
+    st_render_pcl_pt_radius: 0.01
+    st_render_pcl_pts_per_pixel: 1
+
+    dyn_pcl_remove_outlier: false
+    dyn_pcl_outlier_knn: 50
+    dyn_pcl_outlier_std_thres: 0.1
+
+    dyn_render_type: "softsplat"  # ["softsplat", "mesh", "pcl"]
+
+    dyn_render_pcl_pt_radius: 0.01
+    dyn_render_pcl_pts_per_pixel: 1
+
+    dyn_render_track_temporal: "none"  # ["none", "no_tgt"]
+
+    dyn_pcl_track_track2base_thres_mult: 50
+
+    dyn_render_use_flow_consistency: false

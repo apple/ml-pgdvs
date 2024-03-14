@@ -1,0 +1,7 @@
+_target_: pgdvs.engines.trainer_pgdvs.PGDVSTrainer
+
+engine_cfg:
+
+  for_overfit: false
+
+  lr_init: 0.0

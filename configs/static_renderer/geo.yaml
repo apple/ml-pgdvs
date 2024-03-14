@@ -1,0 +1,4 @@
+_target_: pgdvs.renderers.st_geo_renderer.StaticGeoPointRenderer
+
+model_cfg:
+  ckpt_path: null

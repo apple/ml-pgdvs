@@ -1,0 +1,4 @@
+_target_: pgdvs.renderers.pgdvs_renderer.PGDVSRenderer
+
+softsplat_metric_abs_alpha: 100.0  # this value needs to be reasonaly large
+flag_debug: false

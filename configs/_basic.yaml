@@ -1,0 +1,54 @@
+seed: 1234
+
+verbose: true
+
+percision: float32
+
+distributed: true
+
+resume: "none"  # [none, train, eval, vis]
+resume_epoch: null
+resume_dir: null
+
+series_eval: false
+
+max_epochs: 1000
+
+rgb_range: "0_1"  # ["-1_1", "0_1", "0_255"]
+
+use_grad_clip: false
+grad_clip_val: null
+
+log_every_iter: 10
+save_every_iter: -1
+save_every_epoch: 50
+
+vis_every_epoch: 50
+vis_every_iter: -1
+
+n_ckpts_local: -1
+
+train_batch_size: 1
+eval_batch_size: 1
+eval_save_individual: true
+n_max_eval_data: -1  # negative values mean evaluting on all data
+
+n_dataloader_workers: 4
+
+engine: evaluator_pgdvs
+model: ???
+
+dataset: combined
+dataset_max_hw: -1
+dataset_flow_consist_thres: 1.0
+
+n_src_views_spatial: 10
+n_src_views_temporal_track_one_side: 5
+
+flag_debug: false
+
+vis_specifics:
+  n_render_frames: 200
+  vis_center_time: 50
+  vis_time_interval: 10
+  vis_bt_max_disp: 64
