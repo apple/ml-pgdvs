@@ -210,21 +210,21 @@
 
         MULTI_SEQ=(apple block paper-windmill space-out spin teddy wheel)
 
-        # # extract necessary information
-        # python ${REPO_ROOT}/pgdvs/preprocess/dycheck_mono_info_extractor.py \
-        #     --data_dir ${DATA_ROOT} \
-        #     --save_dir ${SAVE_ROOT} \
-        #     --scene_id ${SCENE_ID}
+        # extract necessary information
+        python ${REPO_ROOT}/pgdvs/preprocess/dycheck_mono_info_extractor.py \
+            --data_dir ${DATA_ROOT} \
+            --save_dir ${SAVE_ROOT} \
+            --scene_id ${SCENE_ID}
         
-        # # compute optical flow on raw images
-        # python ${REPO_ROOT}/pgdvs/preprocess/compute_flow.py \
-        #     --model_to_use ${FLOW_MODEL} \
-        #     --ckpt_f ${FLOW_CKPT_F} \
-        #     --root_dir ${SAVE_ROOT}/${SCENE_ID} \
-        #     --save_dir ${SAVE_ROOT}/${SCENE_ID} \
-        #     --image_subdir rgbs \
-        #     --image_pattern '*' \
-        #     --img_pair_max_diff 1
+        # compute optical flow on raw images
+        python ${REPO_ROOT}/pgdvs/preprocess/compute_flow.py \
+            --model_to_use ${FLOW_MODEL} \
+            --ckpt_f ${FLOW_CKPT_F} \
+            --root_dir ${SAVE_ROOT}/${SCENE_ID} \
+            --save_dir ${SAVE_ROOT}/${SCENE_ID} \
+            --image_subdir rgbs \
+            --image_pattern '*' \
+            --img_pair_max_diff 1
 
         # compute mask for raw images
         export IMAGEIO_FFMPEG_EXE=/usr/bin/ffmpeg && \
