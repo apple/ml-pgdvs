@@ -9,7 +9,7 @@
 **Pseudo-Generalized Dynamic View Synthesis from a Video, ICLR 2024.**<br>
 [Xiaoming Zhao](https://xiaoming-zhao.com/), [Alex Colburn](https://www.colburn.org/), [Fangchang Ma](https://fangchangma.github.io/), [Miguel Ángel Bautista](https://scholar.google.com/citations?user=ZrRs-qoAAAAJ&hl=en), [Joshua M Susskind](https://scholar.google.com/citations?user=Sv2TGqsAAAAJ&hl=en), and [Alexander G. Schwing](https://www.alexander-schwing.de/). 
 
-### Project Page | Paper
+### [Project Page](https://xiaoming-zhao.github.io/projects/pgdvs/) | [Paper](https://arxiv.org/abs/2310.08587)
 
 ## Table of Contents
 
