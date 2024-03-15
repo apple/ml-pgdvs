@@ -35,7 +35,7 @@ if [ "${FLAG_ORIGINAL}" == "1" ]; then
     fi
 
 elif [ "${FLAG_ORIGINAL}" == "0" ]; then
-    gdown 12Hb-PVMiiWpz9p3zUIXaGlUgTAbXLtPG -O ${DATA_ROOT}/
+    wget https://github.com/apple/ml-pgdvs/releases/download/v0.1/pgdvs_ckpts.zip -P ${DATA_ROOT}/
     unzip ${DATA_ROOT}/pgdvs_ckpts.zip -d ${DATA_ROOT}/
 
 else
