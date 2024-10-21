@@ -67,6 +67,8 @@ bash ${PGDVS_ROOT}/scripts/preprocess/preprocess.sh \
   /usr/bin/colmap  # set to your own COLMAP binary file path
 ```
 
+To ease future comparison to PGDVS, we provide four processed scenes from the DAVIS dataset on the [release page](https://github.com/apple/ml-pgdvs/releases/tag/v0.2).
+
 ### 3.2 One-step Camera Pose and Depth Estimations
 
 ```bash
@@ -103,7 +105,7 @@ bash ${PGDVS_ROOT}/scripts/visualize.sh \
   ${PGDVS_ROOT}/data/DAVIS_processed_two_step_pose_depth/ \
   mono_vis \
   ${SCENE_ID} \
-  engine.engine_cfg.render_cfg.render_stride=2 \
+  engine.engine_cfg.render_cfg.render_stride=1 \
   vis_specifics.vis_center_time=40 \
   vis_specifics.vis_time_interval=30 \
   vis_specifics.vis_bt_max_disp=48 \
